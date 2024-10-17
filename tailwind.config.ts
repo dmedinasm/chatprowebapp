@@ -367,7 +367,7 @@ const config: Config = {
         sm: '768px',
         md: '1060px',
         lg: '1200px',
-        xl: '1700px',
+        xl: '1536px',
         '3xl': '2000px'
       },
       borderRadius: {
