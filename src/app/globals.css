@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  /* Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
 
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-}
 
 @layer base {
   :root {
@@ -74,5 +64,18 @@
 @layer base {
   body {
     @apply relative  bg-whiten text-base font-normal text-body;
+  }
+  
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

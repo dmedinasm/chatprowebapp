@@ -1,6 +1,7 @@
 import { Search } from 'lucide-react'
 import React from 'react'
-
+import { list } from '../../lib/data'
+import Image from 'next/image'
 function ChatList () {
   return (
     <section className='hidden h-full  flex-col lg:flex xl:w-1/4'>
@@ -18,6 +19,28 @@ function ChatList () {
                  <Search size={20}/>
                 </button>
             </form>
+        </div>
+        <div className='no-scrollbar overflow-auto max-h-full'>
+          {/* Chat List Item */}
+          {
+            list.map((user, index) =>
+              <div className='flex cursor-pointer items-center rounded px-4 py-2 hover:bg-gray-2 dark:hover:bg-strokedark' key={index}>
+                <div className='relative mr-3.5 h-11 rounded-full'>
+                  <Image
+                  src={user.imgSrc}
+                  alt='profile'
+                  width={40}
+                  height={40}
+                  className='h-full w-full rounded-full object-cover object-center' />
+                  <span className='absolute bottom-0 right-0 h-3 w-3 block rounded-full border-2 border-gray-2 bg-success'></span>
+                </div>
+                <div className=''>
+                  <h5 className='text-sm font-medium text-black dark:text-white'>{user.name}</h5>
+                  <p className='text-sm'>{user.message}</p>
+                </div>
+              </div>
+            )
+          }
         </div>
     </section>
   )
