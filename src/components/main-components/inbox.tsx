@@ -23,7 +23,58 @@ function Inbox () {
         </header>
         {/* list of messages */}
         <div className='max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow'>
-
+            <article className='max-w-125'>
+                <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
+                <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
+                    <p>I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?</p>
+                </div>
+                <p className='text-xs font-medium'>1:55 pm</p>
+            </article>
+            <article className='max-w-125 ml-auto'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                    <p className='text-white'>Hello, I will check my schedule and inform you</p>
+                </div>
+                <p className='text-xs font-medium'>1:57 pm</p>
+            </article>
+            <article className='max-w-125'>
+                <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
+                <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
+                    <p>I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?</p>
+                </div>
+                <p className='text-xs font-medium'>1:55 pm</p>
+            </article>
+            <article className='max-w-125 ml-auto'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                    <p className='text-white'>Hello, I will check my schedule and inform you</p>
+                </div>
+                <p className='text-xs font-medium'>1:57 pm</p>
+            </article>
+            <article className='max-w-125'>
+                <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
+                <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
+                    <p>I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?</p>
+                </div>
+                <p className='text-xs font-medium'>1:55 pm</p>
+            </article>
+            <article className='max-w-125 ml-auto'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                    <p className='text-white'>Hello, I will check my schedule and inform you</p>
+                </div>
+                <p className='text-xs font-medium'>1:57 pm</p>
+            </article>
+            <article className='max-w-125'>
+                <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
+                <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
+                    <p>I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?</p>
+                </div>
+                <p className='text-xs font-medium'>1:55 pm</p>
+            </article>
+            <article className='max-w-125 ml-auto'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                    <p className='text-white'>Hello, I will check my schedule and inform you</p>
+                </div>
+                <p className='text-xs font-medium'>1:57 pm</p>
+            </article>
         </div>
         {/* input section */}
         <div className='sticky bottom-0 border-t border-stroke bg-white px-6 py-5 dark:border-strokedark dark:bg-boxdark'>
