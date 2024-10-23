@@ -20,7 +20,7 @@ function ChatList () {
                 </button>
             </form>
         </div>
-        <div className='no-scrollbar overflow-auto max-h-full'>
+        <div className='no-scrollbar overflow-auto max-h-full '>
           {/* Chat List Item */}
           {
             list.map((user, index) =>

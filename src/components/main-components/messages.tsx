@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from './sidebar'
 import ChatList from './chatlist'
+import Inbox from './inbox'
 
 function Messages () {
   return (
@@ -13,6 +14,7 @@ function Messages () {
           <ChatList/>
 
           {/* Inbox */}
+          <Inbox/>
         </div>
     </main>
   )
