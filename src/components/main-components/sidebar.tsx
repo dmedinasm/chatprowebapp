@@ -1,5 +1,6 @@
 import { LogOut, MessageSquare } from 'lucide-react'
 import React from 'react'
+import DarkModeSwitcher from '../ui/darkmodeswitcher'
 
 function Sidebar () {
   return (
@@ -9,7 +10,8 @@ function Sidebar () {
         </div>
         <div className='flex flex-col grow'></div>
 
-        <div className=''>
+        <div className='space-y-4.5'>
+          <DarkModeSwitcher/>
         <div className='mx-auto border border-stroke rounded-md p-2 dark:border-strokedark hover:bg-stone-100 cursor-pointer'>
             <LogOut size={24}/>
         </div>
