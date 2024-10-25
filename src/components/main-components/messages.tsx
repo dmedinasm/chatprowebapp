@@ -5,8 +5,8 @@ import Inbox from './inbox'
 
 function Messages () {
   return (
-    <main className='h-screen overflow-hidden'>
-        <div className='h-full rounded-sm border-stroke bg-white shadow-default dark:border-strokedark lg:flex'>
+    <main className='h-screen overflow-hidden '>
+        <div className='h-full rounded-sm border-stroke bg-white shadow-default dark:border-strokedark  lg:flex'>
           {/* Sidebar */}
           <Sidebar/>
 

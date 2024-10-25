@@ -1,11 +1,11 @@
-import { DotsHorizontalIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
 import React from 'react'
 import { Paperclip, Send, Smile } from 'lucide-react'
+import Dropdown from '../ui/dropdown'
 
 function Inbox () {
   return (
-    <section className='flex flex-col h-full border-l border-stroke dark:border-strokedark w-3/4'>
+    <section className='flex flex-col h-full border-l border-stroke dark:bg-boxdark dark:border-strokedark w-3/4'>
         {/* Chat Header */}
         <header className='sticky flex items-center flex-row justify-between border-b border-stroke dark:border-strokedark px-6 py-4.5'>
             <div className='flex items-center'>
@@ -19,7 +19,7 @@ function Inbox () {
                     <p className='text-sm'>Reply to message</p>
                 </div>
             </div>
-            <DotsHorizontalIcon className='font-bold size-6'/>
+            <Dropdown />
         </header>
         {/* list of messages */}
         <div className='max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow'>
@@ -31,7 +31,7 @@ function Inbox () {
                 <p className='text-xs font-medium'>1:55 pm</p>
             </article>
             <article className='max-w-125 ml-auto'>
-                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary '>
                     <p className='text-white'>Hello, I will check my schedule and inform you</p>
                 </div>
                 <p className='text-xs font-medium'>1:57 pm</p>
@@ -44,7 +44,7 @@ function Inbox () {
                 <p className='text-xs font-medium'>1:55 pm</p>
             </article>
             <article className='max-w-125 ml-auto'>
-                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary '>
                     <p className='text-white'>Hello, I will check my schedule and inform you</p>
                 </div>
                 <p className='text-xs font-medium'>1:57 pm</p>
@@ -57,7 +57,7 @@ function Inbox () {
                 <p className='text-xs font-medium'>1:55 pm</p>
             </article>
             <article className='max-w-125 ml-auto'>
-                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary '>
                     <p className='text-white'>Hello, I will check my schedule and inform you</p>
                 </div>
                 <p className='text-xs font-medium'>1:57 pm</p>
@@ -70,7 +70,7 @@ function Inbox () {
                 <p className='text-xs font-medium'>1:55 pm</p>
             </article>
             <article className='max-w-125 ml-auto'>
-                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary dark:bg-boxdark-2'>
+                <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary '>
                     <p className='text-white'>Hello, I will check my schedule and inform you</p>
                 </div>
                 <p className='text-xs font-medium'>1:57 pm</p>
@@ -90,7 +90,7 @@ function Inbox () {
                      </button>
                     </div>
                 </div>
-                <button className='flex items-center justify-center h-11 max-w-11 w-full bg-chatprimary text-white hover:bg-chatprimary rounded-md hover:bg-opacity-90'><Send size={20}/></button>
+                <button className='flex items-center justify-center h-11 max-w-11 w-full bg-chatprimary text-white hover:bg-chatprimary rounded-lg hover:bg-opacity-90'><Send size={20}/></button>
             </form>
         </div>
     </section>

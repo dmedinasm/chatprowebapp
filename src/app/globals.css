@@ -58,15 +58,14 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-
-@layer base {
   body {
-    @apply relative  bg-whiten text-base font-normal text-body;
+      @apply relative  bg-whiten   text-base font-normal text-body;
   }
-  
+ 
 }
+
+
+
 
 @layer utilities {
   /* Chrome, Safari and Opera */

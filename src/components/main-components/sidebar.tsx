@@ -4,7 +4,7 @@ import DarkModeSwitcher from '../ui/darkmodeswitcher'
 
 function Sidebar () {
   return (
-     <aside className='flex flex-col border-r border-stroke p-2 dark:border-strokedark'>
+     <aside className='flex flex-col border-r border-stroke p-2 dark:bg-boxdark dark:border-strokedark'>
         <div className='mx-auto border border-stroke rounded-md p-2 dark:border-strokedark'>
             <MessageSquare size={24}/>
         </div>
