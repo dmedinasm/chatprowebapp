@@ -3,7 +3,7 @@ import Sidebar from './sidebar'
 import ChatList from './chatlist'
 import Inbox from './inbox'
 
-function Messages () {
+export default function Messages () {
   return (
     <main className='h-screen overflow-hidden '>
         <div className='h-full rounded-sm border-stroke bg-white shadow-default dark:border-strokedark  lg:flex'>
@@ -19,5 +19,3 @@ function Messages () {
     </main>
   )
 }
-
-export default Messages

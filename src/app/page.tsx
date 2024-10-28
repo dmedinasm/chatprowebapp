@@ -1,10 +1,10 @@
+import Login from '@/components/main-components/login'
 import React from 'react'
-import Messages from '@/components/main-components/messages'
 
 export default function Home () {
   return (
    <div >
-   <Messages/>
+    <Login/>
    </div>
   )
 }

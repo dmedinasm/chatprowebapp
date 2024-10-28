@@ -1,9 +1,10 @@
 import React from 'react'
+import Messages from '@/components/main-components/messages'
 
-function Dashboard () {
+export default function Dashboard () {
   return (
-    <div>Dashboard</div>
+    <div>
+      <Messages/>
+    </div>
   )
 }
-
-export default Dashboard
