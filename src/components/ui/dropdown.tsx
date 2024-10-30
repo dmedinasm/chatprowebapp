@@ -20,7 +20,7 @@ function Dropdown () {
 
     document.addEventListener('click', clickHandler)
     return () => document.removeEventListener('click', clickHandler)
-  })
+  }, [])
   useEffect(() => {
     const keyHandler = (event: KeyboardEvent) => {
       if (dropDownOpen && event.key === 'Escape') {
@@ -30,7 +30,7 @@ function Dropdown () {
 
     document.addEventListener('keydown', keyHandler)
     return () => document.removeEventListener('keydown', keyHandler)
-  })
+  }, [])// eslint-disable-line
   return (
     <div className='relative flex'>
         <button ref={trigger} className='text-[#98A6AD] hover:text-body' onClick={() => setDropDownOpen((prev) => !prev)}>
