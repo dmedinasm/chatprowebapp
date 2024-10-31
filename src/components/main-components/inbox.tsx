@@ -1,15 +1,23 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
-import { Paperclip, Send } from 'lucide-react'
+import React, { useState } from 'react'
+import { Paperclip, Phone, Send, Video } from 'lucide-react'
 import Dropdown from '../ui/dropdown'
 import EmojiPicker from '../ui/emojipicker'
+import UserInfo from './userinfo'
 
 function Inbox () {
+  const [userInfoOpen, setUserInfoOpen] = useState(false)
+
+  const handleUserInfoOpen = () => {
+    setUserInfoOpen((prev) => !prev)
+  }
   return (
-    <section className='flex flex-col h-full border-l border-stroke dark:bg-boxdark dark:border-strokedark w-3/4'>
+    <>
+    <section className={`flex flex-col h-full border-l border-stroke dark:bg-boxdark dark:border-strokedark lg:w-3/4 ${userInfoOpen ? 'lg:w-1/2' : 'lg:w-3/4'}`}>
         {/* Chat Header */}
         <header className='sticky flex items-center flex-row justify-between border-b border-stroke dark:border-strokedark px-6 py-4.5'>
-            <div className='flex items-center'>
+            <div className='flex items-center cursor-pointer' onClick={handleUserInfoOpen}>
                 <div className='mr-4.5 h-13 w-full max-w-13 overflow-hidden rounded-full'>
                     <Image src='/user/user-01.png' alt='avatar' width={40} height={40} className='h-full w-full object-cover object-center' />
                 </div>
@@ -20,7 +28,16 @@ function Inbox () {
                     <p className='text-sm'>Reply to message</p>
                 </div>
             </div>
+            <div className='flex flex-row items-center space-x-8'>
+                <button>
+                    <Video size={24}/>
+                </button>
+                <button>
+                    <Phone size={20}/>
+                </button>
             <Dropdown />
+            </div>
+
         </header>
         {/* list of messages */}
         <div className='max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow'>
@@ -93,6 +110,15 @@ function Inbox () {
             </form>
         </div>
     </section>
+    {userInfoOpen &&
+    <div className='w-1/4'>
+        <UserInfo handleToggleUserInfo={handleUserInfoOpen}/>
+    </div>
+
+    }
+
+    </>
+
   )
 }
 

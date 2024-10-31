@@ -1,8 +1,10 @@
+'use client'
 import { Search } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import { list } from '../../lib/data'
 import Image from 'next/image'
 function ChatList () {
+  const [selected, setSelected] = useState(0)
   return (
     <section className='hidden h-full  flex-col lg:flex xl:w-1/4 dark:bg-boxdark'>
         <div className='sticky border-b border-stroke dark:border-strokedark px-6 py-7.5 flex flex-row'>
@@ -20,11 +22,15 @@ function ChatList () {
                 </button>
             </form>
         </div>
-        <div className='no-scrollbar overflow-auto max-h-full '>
+        <div className='no-scrollbar overflow-auto max-h-full space-y-2 '>
           {/* Chat List Item */}
           {
             list.map((user, index) =>
-              <div className='flex cursor-pointer items-center rounded px-4 py-2 hover:bg-gray-2 dark:hover:bg-strokedark' key={index}>
+              <div className={`flex cursor-pointer items-center rounded px-4 py-2 
+             hover:bg-gray-2 dark:hover:bg-strokedark ${selected === index && 'bg-gray dark:bg-boxdark-2'}`}
+              key={index}
+              onClick={() => setSelected(index)}
+              >
                 <div className='relative mr-3.5 h-11 rounded-full'>
                   <Image
                   src={user.imgSrc}

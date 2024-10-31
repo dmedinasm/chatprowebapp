@@ -20,7 +20,7 @@ function Sidebar () {
           <span className='font-medium text-sm'>WorkSpace</span>
         </div>
         {navigation.map((item) =>
-          <div key={item.key} className='flex flex-col text-center space-y-2 hover:cursor-pointer hover:text-chatprimary'
+          <li key={item.key} className='flex flex-col text-center space-y-2 hover:cursor-pointer hover:text-chatprimary'
           onClick={() => handleClick(item.key)}
           >
             <div className={`mx-auto border border-stroke rounded-md p-2 dark:border-strokedark 
@@ -28,7 +28,7 @@ function Sidebar () {
               <item.icon size={24} />
             </div>
             <span className={`font-medium text-sm ${selected === item.key && 'text-chatprimary'}`}>{item.title}</span>
-          </div>
+          </li>
         )}
       </div>
       <div className='flex flex-col grow'></div>
