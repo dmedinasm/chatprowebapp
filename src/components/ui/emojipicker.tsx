@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from 'react'
 
 function EmojiPicker () {
   const [openPicker, setOpenPicker] = useState(false)
-
   const pickerRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -14,6 +13,7 @@ function EmojiPicker () {
     event.preventDefault()
     setOpenPicker((prev) => !prev)
   }
+
   useEffect(() => {
     const clickHandler = (event: MouseEvent) => {
       const target = event.target as HTMLElement
@@ -27,6 +27,13 @@ function EmojiPicker () {
     document.addEventListener('click', clickHandler)
     return () => document.removeEventListener('click', clickHandler)
   }, [])
+
+  /* const colorMode = () => {
+    if (typeof window === 'undefined') return null
+    const theme = JSON.parse(window.localStorage.getItem('color-theme') as string)
+    return theme
+  } */
+
   return (
     <div className='relative flex'>
         <button ref={buttonRef} className='text-[rgb(152,166,173)] hover:text-body' onClick={handleTrigger}>

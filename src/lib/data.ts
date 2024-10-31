@@ -1,8 +1,5 @@
-interface ChatItem {
-    imgSrc: string;
-    name: string;
-    message: string;
-}
+import { ChatItem, SideMenuItem } from '../../types'
+import { MessageSquare, Users, CircleUserRound, CircleEllipsis } from 'lucide-react'
 export const list: ChatItem[] = [
   {
     imgSrc: '/user/user-01.png',
@@ -43,5 +40,28 @@ export const list: ChatItem[] = [
     imgSrc: '/user/user-08.png',
     name: 'Jenny Wilson',
     message: 'I cam across your profile and...'
+  }
+]
+
+export const navigation: SideMenuItem[] = [
+  {
+    key: 0,
+    title: 'DMs',
+    icon: MessageSquare
+  },
+  {
+    key: 1,
+    title: 'Groups',
+    icon: Users
+  },
+  {
+    key: 2,
+    title: 'Profile',
+    icon: CircleUserRound
+  },
+  {
+    key: 3,
+    title: 'More',
+    icon: CircleEllipsis
   }
 ]
