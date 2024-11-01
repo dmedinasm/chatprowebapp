@@ -5,6 +5,7 @@ import { Paperclip, Phone, Send, Video } from 'lucide-react'
 import Dropdown from '../ui/dropdown'
 import EmojiPicker from '../ui/emojipicker'
 import UserInfo from './userinfo'
+import Giphy from '../ui/giphy'
 
 function Inbox () {
   const [userInfoOpen, setUserInfoOpen] = useState(false)
@@ -108,6 +109,7 @@ function Inbox () {
                 </div>
                 <button className='flex items-center justify-center h-11 max-w-11 w-full bg-chatprimary text-white hover:bg-chatprimary rounded-lg hover:bg-opacity-90'><Send size={20}/></button>
             </form>
+            <Giphy/>
         </div>
     </section>
     {userInfoOpen &&
