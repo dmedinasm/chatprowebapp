@@ -49,13 +49,13 @@ export default function Giphy () {
     fetchInitialGifs()
   }, [])//eslint-disable-line
 
-  const handleGifClick = ({ gif, e }: {gif: IGif, e: MouseEvent}) => {
+  const handleGifClick = (gif: IGif, e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault()
     const gifUrl = gif.images.original.url
     console.log(gifUrl)
   }
   return (
-    <div ref={gridRef} className='w-full mt-3'>
+    <div ref={gridRef} className='w-full mt-3 '>
         <input type='text' placeholder='Search for Gif...'
         className='border border-stroke rounded-md p-2 w-full mb-2 outline-none'
         value={value}
@@ -69,7 +69,7 @@ export default function Giphy () {
 
         <div className='h-48 overflow-auto no-scrollbar'>
             {
-                gridRef.current && <Grid width={gridRef.current.offsetWidth} columns={8} gutter={6} fetchGifs={fetchGifs} key={value} onGifClick={handleGifClick} data={gifs}/>
+                gridRef.current && <Grid width={gridRef.current.offsetWidth} columns={8} gutter={6} fetchGifs={fetchGifs} key={value} onGifClick={handleGifClick} data={gifs} />
             }
 
         </div>

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,13 +57,9 @@
     --chart-5: 340 75% 55%;
   }
   body {
-      @apply relative  bg-whiten   text-base font-normal text-body;
+    @apply relative  bg-whiten   text-base font-normal text-body;
   }
- 
 }
-
-
-
 
 @layer utilities {
   /* Chrome, Safari and Opera */
@@ -78,3 +72,4 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
