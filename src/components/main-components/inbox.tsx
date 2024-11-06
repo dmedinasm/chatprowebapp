@@ -6,10 +6,17 @@ import Dropdown from '../ui/dropdown'
 import EmojiPicker from '../ui/emojipicker'
 import UserInfo from './userinfo'
 import Giphy from '../ui/giphy'
+import { PixelarticonsGif } from '../ui/gif'
 
 function Inbox () {
   const [userInfoOpen, setUserInfoOpen] = useState(false)
 
+  const [gifOpen, setGifOpen] = useState(false)
+
+  const handleToggleGif = (e:React.MouseEvent<HTMLButtonElement >) => {
+    e.preventDefault()
+    setGifOpen((prev) => !prev)
+  }
   const handleUserInfoOpen = () => {
     setUserInfoOpen((prev) => !prev)
   }
@@ -104,12 +111,15 @@ function Inbox () {
                      <button className='hover:text-chatprimary'>
                         <Paperclip size={20} />
                      </button>
+                     <button onClick={handleToggleGif}>
+                        <PixelarticonsGif />
+                     </button>
                         <EmojiPicker/>
                     </div>
                 </div>
                 <button className='flex items-center justify-center h-11 max-w-11 w-full bg-chatprimary text-white hover:bg-chatprimary rounded-lg hover:bg-opacity-90'><Send size={20}/></button>
             </form>
-            <Giphy/>
+            {gifOpen && <Giphy/>}
         </div>
     </section>
     {userInfoOpen &&

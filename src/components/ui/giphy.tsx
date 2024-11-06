@@ -4,6 +4,7 @@ import { Grid } from '@giphy/react-components'
 import { GiphyFetch } from '@giphy/js-fetch-api'
 import type { IGif } from '@giphy/js-types'
 import { useDebouncedCallback } from 'use-debounce'
+import { Search } from 'lucide-react'
 
 const gf = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY!)
 export default function Giphy () {
@@ -57,7 +58,7 @@ export default function Giphy () {
   return (
     <div ref={gridRef} className='w-full mt-3 '>
         <input type='text' placeholder='Search for Gif...'
-        className='border border-stroke rounded-md p-2 w-full mb-2 outline-none'
+        className='border border-stroke rounded-md p-2 w-full mb-2 outline-none dark:border-strokedark bg-transparent'
         value={value}
         onChange ={(e) => {
           setValue(e.target.value)
@@ -69,7 +70,12 @@ export default function Giphy () {
 
         <div className='h-48 overflow-auto no-scrollbar'>
             {
-                gridRef.current && <Grid width={gridRef.current.offsetWidth} columns={8} gutter={6} fetchGifs={fetchGifs} key={value} onGifClick={handleGifClick} data={gifs} />
+              gifs.length > 0
+                ? <Grid width={gridRef.current?.offsetWidth} columns={8} gutter={6} fetchGifs={fetchGifs} key={value} onGifClick={handleGifClick} data={gifs} />
+                : <div className='flex flex-col items-center justify-center h-full space-y-2'>
+                <Search size={48} fontWeight={500}/>
+                <span className='text-xl text-body dark:text-white font-semibold'>Please search for any Gif</span>
+                </div>
             }
 
         </div>
