@@ -5,9 +5,11 @@ import { GiphyFetch } from '@giphy/js-fetch-api'
 import type { IGif } from '@giphy/js-types'
 import { useDebouncedCallback } from 'use-debounce'
 import { Search } from 'lucide-react'
+import useGifStore from '@/store/gifStore'
 
 const gf = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY!)
 export default function Giphy () {
+  const { updatedGifModal } = useGifStore()
   const gridRef = useRef<HTMLDivElement>(null)
   const [isloading, setIsLoading] = useState(false)
   const [value, setValue] = useState('')
@@ -53,7 +55,7 @@ export default function Giphy () {
   const handleGifClick = (gif: IGif, e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault()
     const gifUrl = gif.images.original.url
-    console.log(gifUrl)
+    updatedGifModal(gifUrl, true)
   }
   return (
     <div ref={gridRef} className='w-full mt-3 '>
