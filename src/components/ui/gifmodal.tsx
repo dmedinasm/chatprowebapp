@@ -2,14 +2,25 @@
 import useGifStore from '@/store/gifStore'
 import { Send, X } from 'lucide-react'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 function GifModal () {
+  const modalRef = useRef(null)
   const { modals, selectedGifUrl, updatedGifModal } = useGifStore()
   const modalOpen = modals.gif
 
+  useEffect(() => {
+    const keyHandler = (event: KeyboardEvent) => {
+      if (modalOpen && event.key === 'Escape') {
+        updatedGifModal('', false)
+      }
+    }
+
+    document.addEventListener('keydown', keyHandler)
+    return () => document.removeEventListener('keydown', keyHandler)
+  }, [])// eslint-disable-line
   return (
-      <dialog className={`fixed left-0 top-0 flex z-999999 h-full min-h-screen w-full items-center justify-center bg-black/90 px-4 py-5 ${modalOpen ? 'block' : 'hidden'}`}>
+      <dialog ref={modalRef} className={`fixed left-0 top-0 flex z-999999 h-full min-h-screen w-full items-center justify-center bg-black/90 px-4 py-5 ${modalOpen ? 'block' : 'hidden'}`}>
           <div className='sm:px-17.5 w-full max-w-142.5 rounded-lg bg-white dark:bg-boxdark sm:py-8 px-8 py-12'>
               <div className='flex flex-row items-center justify-between mb-8 space-x-2'>
                   <div className='text-md text-black font-medium dark:text-white'>Send Giphy</div>

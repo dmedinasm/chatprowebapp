@@ -3,10 +3,12 @@ import { persist } from 'zustand/middleware'
 
 type GifStore = {
  modals:{
-  gif:boolean
+  gif:boolean,
+  audio:boolean
  },
  selectedGifUrl:string,
  updatedGifModal:(url: string, toggle: boolean) => void,
+ updatedAudioModal:(toggle: boolean) => void
 }
 
 const localStoragePersist = {
@@ -25,7 +27,8 @@ const localStoragePersist = {
 const useGifStore = create<GifStore>()(persist(
   (set, get) => ({
     modals: {
-      gif: false
+      gif: false,
+      audio: false
     },
     selectedGifUrl: '',
 
@@ -34,8 +37,13 @@ const useGifStore = create<GifStore>()(persist(
       const newModals = { ...modals, gif: toggle }
       set({ modals: newModals })
       set({ selectedGifUrl: url })
-    }
+    },
 
+    updatedAudioModal: (toggle) => {
+      const { modals } = get()
+      const newModals = { ...modals, audio: toggle }
+      set({ modals: newModals })
+    }
   }),
   {
     name: 'gifStore',

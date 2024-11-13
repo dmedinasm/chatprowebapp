@@ -3,6 +3,7 @@ import Sidebar from './sidebar'
 import ChatList from './chatlist'
 import Inbox from './inbox'
 import GifModal from '../ui/gifmodal'
+import VoiceRecorder from '../ui/voicerecorder'
 
 export default function Messages () {
   return (
@@ -18,6 +19,7 @@ export default function Messages () {
           <Inbox/>
         </div>
         <GifModal/>
+        <VoiceRecorder/>
     </main>
   )
 }

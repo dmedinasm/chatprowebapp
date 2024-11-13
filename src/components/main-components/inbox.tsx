@@ -1,16 +1,17 @@
 'use client'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { Paperclip, Phone, Send, Video } from 'lucide-react'
+import { Mic, Paperclip, Phone, Send, Video } from 'lucide-react'
 import Dropdown from '../ui/dropdown'
 import EmojiPicker from '../ui/emojipicker'
 import UserInfo from './userinfo'
 import Giphy from '../ui/giphy'
 import { PixelarticonsGif } from '../ui/gif'
+import useGifStore from '@/store/gifStore'
 
 function Inbox () {
+  const { updatedAudioModal } = useGifStore()
   const [userInfoOpen, setUserInfoOpen] = useState(false)
-
   const [gifOpen, setGifOpen] = useState(false)
 
   const handleToggleGif = (e:React.MouseEvent<HTMLButtonElement >) => {
@@ -19,6 +20,10 @@ function Inbox () {
   }
   const handleUserInfoOpen = () => {
     setUserInfoOpen((prev) => !prev)
+  }
+  const handleMicClick = (e:React.MouseEvent<HTMLButtonElement >) => {
+    e.preventDefault()
+    updatedAudioModal(true)
   }
   return (
     <>
@@ -108,6 +113,9 @@ function Inbox () {
                 <div className='relative  w-full'>
                     <input type='text' placeholder='Type something here...' className='h-11 w-full rounded-md border border-stroke bg-gray pl-5 pr-19 text-black placeholder-body outline-none focus:border-chatprimary dark:border-strokedark dark:bg-boxdark-2 dark:text-white' />
                     <div className='absolute right-5 top-1/2 -translate-y-1/2 flex items-center justify-end space-x-4'>
+                     <button onClick={handleMicClick} className='hover:text-chatprimary'>
+                        <Mic size={20} />
+                     </button>
                      <button className='hover:text-chatprimary'>
                         <Paperclip size={20} />
                      </button>
