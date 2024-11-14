@@ -4,6 +4,8 @@ import ChatList from './chatlist'
 import Inbox from './inbox'
 import GifModal from '../ui/gifmodal'
 import VoiceRecorder from '../ui/voicerecorder'
+import MediaPicker from '../ui/mediapicker'
+import DocumentPicker from '../ui/documentpicker'
 
 export default function Messages () {
   return (
@@ -20,6 +22,8 @@ export default function Messages () {
         </div>
         <GifModal/>
         <VoiceRecorder/>
+        <MediaPicker/>
+        <DocumentPicker/>
     </main>
   )
 }

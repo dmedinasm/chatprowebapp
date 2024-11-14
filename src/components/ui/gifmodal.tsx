@@ -18,7 +18,7 @@ function GifModal () {
 
     document.addEventListener('keydown', keyHandler)
     return () => document.removeEventListener('keydown', keyHandler)
-  }, [])// eslint-disable-line
+  })// eslint-disable-line
   return (
       <dialog ref={modalRef} className={`fixed left-0 top-0 flex z-999999 h-full min-h-screen w-full items-center justify-center bg-black/90 px-4 py-5 ${modalOpen ? 'block' : 'hidden'}`}>
           <div className='sm:px-17.5 w-full max-w-142.5 rounded-lg bg-white dark:bg-boxdark sm:py-8 px-8 py-12'>

@@ -1,13 +1,14 @@
 'use client'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { Mic, Paperclip, Phone, Send, Video } from 'lucide-react'
+import { Mic, Phone, Send, Video } from 'lucide-react'
 import Dropdown from '../ui/dropdown'
 import EmojiPicker from '../ui/emojipicker'
 import UserInfo from './userinfo'
 import Giphy from '../ui/giphy'
 import { PixelarticonsGif } from '../ui/gif'
 import useGifStore from '@/store/gifStore'
+import Attachment from '../ui/attachment'
 
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
@@ -116,9 +117,7 @@ function Inbox () {
                      <button onClick={handleMicClick} className='hover:text-chatprimary'>
                         <Mic size={20} />
                      </button>
-                     <button className='hover:text-chatprimary'>
-                        <Paperclip size={20} />
-                     </button>
+                        <Attachment/>
                      <button onClick={handleToggleGif}>
                         <PixelarticonsGif />
                      </button>
