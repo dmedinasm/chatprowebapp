@@ -9,6 +9,8 @@ import Giphy from '../ui/giphy'
 import { PixelarticonsGif } from '../ui/gif'
 import useGifStore from '@/store/gifStore'
 import Attachment from '../ui/attachment'
+import MessageSeparator from '../ui/messageseparator'
+import TypingIndicator from '../ui/typingindicator'
 
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
@@ -68,6 +70,9 @@ function Inbox () {
                 </div>
                 <p className='text-xs font-medium'>1:57 pm</p>
             </article>
+
+            <MessageSeparator date='Today'/>
+
             <article className='max-w-125'>
                 <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
                 <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
@@ -107,6 +112,7 @@ function Inbox () {
                 </div>
                 <p className='text-xs font-medium'>1:57 pm</p>
             </article>
+            <TypingIndicator/>
         </div>
         {/* input section */}
         <div className='sticky bottom-0 border-t border-stroke bg-white px-6 py-5 dark:border-strokedark dark:bg-boxdark'>
