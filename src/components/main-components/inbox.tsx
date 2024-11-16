@@ -63,7 +63,7 @@ function Inbox () {
                  author: 'Andri Thomas',
                  timestamp: '1:55 pm',
                  read_recipt: false,
-                 content: 'I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?'
+                 content: 'I want to make an appointment tomorrow from 2:00 pm to 5:00 pm? to talk about https://npmjs.com'
                }
            } />
             <article className='max-w-125 ml-auto'>
