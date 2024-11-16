@@ -11,7 +11,7 @@ import useGifStore from '@/store/gifStore'
 import Attachment from '../ui/attachment'
 import MessageSeparator from '../ui/messageseparator'
 import TypingIndicator from '../ui/typingindicator'
-
+import TextMessages from '../ui/textmessages'
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
   const [userInfoOpen, setUserInfoOpen] = useState(false)
@@ -57,13 +57,15 @@ function Inbox () {
         </header>
         {/* list of messages */}
         <div className='max-h-full space-y-3.5 overflow-auto no-scrollbar px-6 py-7.5 grow'>
-            <article className='max-w-125'>
-                <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
-                <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
-                    <p>I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?</p>
-                </div>
-                <p className='text-xs font-medium'>1:55 pm</p>
-            </article>
+           <TextMessages message={
+               {
+                 incoming: true,
+                 author: 'Andri Thomas',
+                 timestamp: '1:55 pm',
+                 read_recipt: false,
+                 content: 'I want to make an appointment tomorrow from 2:00 pm to 5:00 pm?'
+               }
+           } />
             <article className='max-w-125 ml-auto'>
                 <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary '>
                     <p className='text-white'>Hello, I will check my schedule and inform you</p>

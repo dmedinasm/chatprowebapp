@@ -11,4 +11,12 @@ interface SideMenuItem{
     icon:LucideIcon;
 }
 
-export type { ChatItem, SideMenuItem }
+interface Message {
+    incoming: boolean;
+    author: string;
+    timestamp: string;
+    read_recipt: boolean;
+    content: string;
+}
+
+export type { ChatItem, SideMenuItem, Message }
