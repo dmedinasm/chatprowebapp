@@ -1,5 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 
+type MessageState = 'Sent' | 'Delivered' | 'Read'
+
 interface ChatItem {
     imgSrc: string;
     name: string;
@@ -15,8 +17,8 @@ interface Message {
     incoming: boolean;
     author: string;
     timestamp: string;
-    read_recipt: boolean;
+    read_recipt: MessageState;
     content: string;
 }
 
-export type { ChatItem, SideMenuItem, Message }
+export type { ChatItem, SideMenuItem, Message, MessageState }
