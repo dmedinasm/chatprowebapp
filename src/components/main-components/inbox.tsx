@@ -12,6 +12,7 @@ import Attachment from '../ui/attachment'
 import MessageSeparator from '../ui/messageseparator'
 import TypingIndicator from '../ui/typingindicator'
 import TextMessages from '../ui/textmessages'
+import DocumentMessages from '../ui/documentmessages'
 
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
@@ -75,7 +76,15 @@ function Inbox () {
             </article>
 
             <MessageSeparator date='Today'/>
-
+            <DocumentMessages message={
+                {
+                  incoming: false,
+                  author: 'Andri Thomas',
+                  timestamp: '1:55 pm',
+                  read_recipt: 'Delivered',
+                  content: 'I want to make an appointment tomorrow from 2:00 pm to 5:00 pm? to talk about https://npmjs.com'
+                }
+            }/>
             <article className='max-w-125'>
                 <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
                 <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2'>
