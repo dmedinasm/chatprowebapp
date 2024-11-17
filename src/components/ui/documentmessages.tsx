@@ -5,7 +5,7 @@ import { Check, CheckCheck, Download, File } from 'lucide-react'
 export default function DocumentMessages ({ message }: { message: Message }) {
   return message.incoming
     ? (
-    <div className='max-w-125 w-fit'>
+    <article className='max-w-125 w-fit'>
         <p className='mb-2.5 text-sm font-medium capitalize'>{message.author}</p>
         <div className='mb-2.5 rounded-tl-none rounded-2xl px-5 py-3 bg-gray dark:bg-boxdark-2 space-y-2'>
             <div className='flex flex-row items-center justify-between p-2 bg-gray-3 rounded-md dark:bg-boxdark'>
@@ -26,10 +26,10 @@ export default function DocumentMessages ({ message }: { message: Message }) {
 
         </div>
         <p className='text-xs'>{message.timestamp}</p>
-    </div>
+    </article>
       )
     : (
-          <div className='max-w-125 w-fit ml-auto'>
+          <article className='max-w-125 w-fit ml-auto'>
               <div className='mb-2.5 rounded-br-none rounded-2xl px-5 py-3 bg-chatprimary text-white space-y-2'>
                   <div className='flex flex-row items-center justify-between p-2 bg-white rounded-md text-chatprimary'>
                       <div className='flex flex-row items-center space-x-3'>
@@ -54,6 +54,6 @@ export default function DocumentMessages ({ message }: { message: Message }) {
                   </div>
                   <p className='text-xs font-medium text-right'>{message.timestamp}</p>
               </div>
-          </div>
+          </article>
       )
 }

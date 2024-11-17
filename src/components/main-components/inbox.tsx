@@ -13,6 +13,7 @@ import MessageSeparator from '../ui/messageseparator'
 import TypingIndicator from '../ui/typingindicator'
 import TextMessages from '../ui/textmessages'
 import DocumentMessages from '../ui/documentmessages'
+import VoiceMessages from '../ui/voicemessages'
 
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
@@ -78,12 +79,21 @@ function Inbox () {
             <MessageSeparator date='Today'/>
             <DocumentMessages message={
                 {
-                  incoming: false,
+                  incoming: true,
                   author: 'Andri Thomas',
                   timestamp: '1:55 pm',
                   read_recipt: 'Delivered',
                   content: 'I want to make an appointment tomorrow from 2:00 pm to 5:00 pm? to talk about https://npmjs.com'
                 }
+            }/>
+
+            <VoiceMessages message={{
+              incoming: false,
+              author: 'Andri Thomas',
+              timestamp: '4:55 pm',
+              read_recipt: 'Read',
+              content: ''
+            }
             }/>
             <article className='max-w-125'>
                 <p className='mb-2.5 text-sm font-medium'>Andri Thomas</p>
