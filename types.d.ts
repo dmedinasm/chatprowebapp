@@ -21,4 +21,21 @@ interface Message {
     content: string;
 }
 
-export type { ChatItem, SideMenuItem, Message, MessageState }
+interface MediaMessage extends Message {
+  assets: string[];
+  caption: string;
+}
+
+interface MediaMessageImage {
+    key: number;
+    imgSrc: string;
+}
+
+export type {
+  ChatItem,
+  SideMenuItem,
+  Message,
+  MessageState,
+  MediaMessage,
+  MediaMessageImage
+}

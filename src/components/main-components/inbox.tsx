@@ -14,6 +14,7 @@ import TypingIndicator from '../ui/typingindicator'
 import TextMessages from '../ui/textmessages'
 import DocumentMessages from '../ui/documentmessages'
 import VoiceMessages from '../ui/voicemessages'
+import MediaMessages from '../ui/mediamessages'
 
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
@@ -93,6 +94,17 @@ function Inbox () {
               timestamp: '4:55 pm',
               read_recipt: 'Read',
               content: ''
+            }
+            }/>
+
+            <MediaMessages message={{
+              incoming: true,
+              author: 'Andri Thomas',
+              timestamp: '4:55 pm',
+              read_recipt: 'Read',
+              content: '',
+              assets: ['https://images.unsplash.com/photo-1678489820694-df1b1388dd6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'],
+              caption: 'This is a beautiful car'
             }
             }/>
             <article className='max-w-125'>

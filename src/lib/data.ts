@@ -1,4 +1,4 @@
-import { ChatItem, SideMenuItem } from '../../types'
+import { ChatItem, MediaMessageImage, SideMenuItem } from '../../types'
 import { MessageSquare, Users, CircleUserRound, CircleEllipsis } from 'lucide-react'
 export const list: ChatItem[] = [
   {
@@ -63,5 +63,29 @@ export const navigation: SideMenuItem[] = [
     key: 3,
     title: 'More',
     icon: CircleEllipsis
+  }
+]
+
+export const images : MediaMessageImage[] = [
+  {
+    key: 0,
+    imgSrc: 'https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    key: 1,
+    imgSrc: 'https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    key: 2,
+    imgSrc: 'https://images.pexels.com/photos/39855/lamborghini-brno-racing-car-automobiles-39855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    key: 3,
+    imgSrc: 'https://images.pexels.com/photos/2127733/pexels-photo-2127733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+
+  {
+    key: 4,
+    imgSrc: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   }
 ]
