@@ -1,10 +1,15 @@
 import React from 'react'
-import Messages from '@/components/main-components/messages'
+import ChatList from '@/components/main-components/chatlist'
+import Inbox from '@/components/main-components/inbox'
 
 export default function Dashboard () {
   return (
-    <div>
-      <Messages/>
-    </div>
+    <>
+    {/* ChatList */}
+    <ChatList/>
+    {/* Inbox */}
+    <Inbox/>
+    </>
+
   )
 }

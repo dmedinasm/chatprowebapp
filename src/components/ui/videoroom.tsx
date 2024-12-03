@@ -22,7 +22,7 @@ export default function VideoRoom ({
                   {/* Video Feed Grid */}
                   <div className='grid grid-cols-2 gap-4 h-50 mb-4'>
                       {/* Video Feed 1 */}
-                      <div className='relative h-full w-full bg-gray rounded-md flex items-center justify-center'>
+                      <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 rounded-md flex items-center justify-center'>
                        <div className='space-y-2'>
                         <Image src='/user/user-01.png' alt='image-avatar' width={80} height={80} className='h-20 w-20 rounded-full object-cover object-center' />
                         <p className='font-medium text-small text-center'>You</p>
@@ -32,7 +32,7 @@ export default function VideoRoom ({
                        </div>
                       </div>
                       {/* Video Feed 2 */}
-                      <div className='relative h-full w-full bg-gray rounded-md flex items-center justify-center'>
+                      <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 rounded-md flex items-center justify-center'>
                        <div className='space-y-2'>
                         <Image src='/user/user-02.png' alt='image-avatar' width={80} height={80} className='h-20 w-20 rounded-full object-cover object-center' />
                         <p className='font-medium text-sm text-center'>Andrea Smith</p>
@@ -45,7 +45,7 @@ export default function VideoRoom ({
                 {/* Call controls */}
                 <div className='flex flex-row items-center justify-center space-x-4'>
                     {/* Microphone */}
-                    <button onClick={handleToggleAudio} className='p-3 rounded-md bg-gray dark:bg-boxdark
+                    <button onClick={handleToggleAudio} className='p-3 rounded-md bg-gray dark:bg-boxdark-2
                     text-black dark:text-white hover:opacity-80 flex items-center justify-center '>
                         {muteAudio ? <MicOff size={20} /> : <Mic size={20} />}
                     </button>
@@ -55,7 +55,7 @@ export default function VideoRoom ({
                         <PhoneOff size={20} />
                     </button>
                     {/* Video camera button */}
-                    <button onClick={handleToggleVideo} className='p-3 rounded-md bg-gray dark:bg-boxdark
+                    <button onClick={handleToggleVideo} className='p-3 rounded-md bg-gray dark:bg-boxdark-2
                     text-black dark:text-white hover:opacity-80 flex items-center justify-center '>
                         {muteVideo ? <VideoOff size={20} /> : <Video size={20}/> }
                     </button>
