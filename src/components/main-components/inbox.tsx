@@ -15,12 +15,22 @@ import TextMessages from '../ui/textmessages'
 import DocumentMessages from '../ui/documentmessages'
 import VoiceMessages from '../ui/voicemessages'
 import MediaMessages from '../ui/mediamessages'
+import VideoRoom from '../ui/videoroom'
+import AudioRoom from '../ui/audioroom'
 
 function Inbox () {
   const { updatedAudioModal } = useGifStore()
   const [userInfoOpen, setUserInfoOpen] = useState(false)
+  const [videoCall, setVideoCall] = useState(false)
+  const [audioCall, setAudioCall] = useState(false)
   const [gifOpen, setGifOpen] = useState(false)
 
+  const handleToggleVideo = () => {
+    setVideoCall((prev) => !prev)
+  }
+  const handleToggleAudio = () => {
+    setAudioCall((prev) => !prev)
+  }
   const handleToggleGif = (e:React.MouseEvent<HTMLButtonElement >) => {
     e.preventDefault()
     setGifOpen((prev) => !prev)
@@ -49,10 +59,10 @@ function Inbox () {
                 </div>
             </div>
             <div className='flex flex-row items-center space-x-8'>
-                <button>
+                <button onClick={handleToggleVideo}>
                     <Video size={24}/>
                 </button>
-                <button>
+                <button onClick={handleToggleAudio}>
                     <Phone size={20}/>
                 </button>
             <Dropdown />
@@ -169,6 +179,8 @@ function Inbox () {
             {gifOpen && <Giphy/>}
         </div>
     </section>
+    {videoCall && <VideoRoom open={videoCall} handleClose={handleToggleVideo}/>}
+    {audioCall && <AudioRoom open={audioCall} handleClose={handleToggleAudio}/>}
     {userInfoOpen &&
     <div className='w-1/4'>
         <UserInfo handleToggleUserInfo={handleUserInfoOpen}/>
