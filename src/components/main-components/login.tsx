@@ -1,10 +1,13 @@
+'use client'
 import React from 'react'
 import Logo from '../ui/logo'
 import Link from 'next/link'
 import Image from 'next/image'
 import { LockKeyhole, Mail } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 function Login () {
+  const route = useRouter()
   return (
         <section className='border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark h-screen '>
             <div className='flex flex-row flex-wrap items-center  h-full'>
@@ -52,10 +55,10 @@ function Login () {
 
                             </div>
                             <div className='mb-5'>
-                                <input type='submit' value='Sign In' className='w-full cursor-pointer border border-chatprimary bg-chatprimary text-white p-2.5 rounded-lg transition hover:bg-opacity-90' />
+                                <input type='button' value='Sign In' onClick={() => { route.push('/dashboard') }} className='w-full cursor-pointer border border-chatprimary bg-chatprimary text-white p-2.5 rounded-lg transition hover:bg-opacity-90' />
                             </div>
                             <div>
-                                <button className='flex  w-full items-center justify-center gap-3.5 border border-stroke bg-gray p-2.5 rounded-lg hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:bg-opacity-50'>
+                                <button type='button' onClick={() => { route.push('/dashboard') }} className='flex  w-full items-center justify-center gap-3.5 border border-stroke bg-gray p-2.5 rounded-lg hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:bg-opacity-50'>
                                     <span>
                                         <Image src='/google-logo.svg' alt='google' width={20} height={20} />
                                     </span>

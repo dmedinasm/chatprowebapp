@@ -1,8 +1,11 @@
+'use client'
 import Logo from '@/components/ui/logo'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 function Verification () {
+  const route = useRouter()
   return (
     <section className='p-4 dark:bg-boxdark-2 xs:px-8'>
     <div className='flex h-screen flex-col items-center justify-center overflow-hidden'>
@@ -27,7 +30,7 @@ function Verification () {
                                 <p>Did no receive a code a code?</p>
                                 <button className='text-chatprimary '>Resend Code</button>
                             </div>
-                            <button className='flex w-full justify-center rounded-md p-[11px] text-gray font-bold bg-chatprimary hover: bg-opacity-90'>
+                            <button type='button' onClick={() => { route.push('/dashboard') }} className='flex w-full justify-center rounded-md p-[11px] text-gray font-bold bg-chatprimary hover: bg-opacity-90'>
                                 Verify
                             </button>
                             <span className='mt-5 block text-red text-sm'>

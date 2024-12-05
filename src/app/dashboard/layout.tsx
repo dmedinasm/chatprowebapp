@@ -11,7 +11,7 @@ export default function DashboardLayout ({
 }>) {
   return (
 
-        <main className='h-screen overflow-hidden '>
+        <main className='h[calc(100vh)] h-screen overflow-hidden ss:h-screen'>
             <div className='h-full rounded-sm border-stroke bg-white shadow-default dark:border-strokedark  lg:flex'>
                 {/* Sidebar */}
                 <Sidebar/>

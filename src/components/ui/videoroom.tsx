@@ -22,7 +22,7 @@ export default function VideoRoom ({
                   {/* Video Feed Grid */}
                   <div className='grid grid-cols-2 gap-4 h-50 mb-4'>
                       {/* Video Feed 1 */}
-                      <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 rounded-md flex items-center justify-center'>
+                      <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 dark:text-white rounded-md flex items-center justify-center'>
                        <div className='space-y-2'>
                         <Image src='/user/user-01.png' alt='image-avatar' width={80} height={80} className='h-20 w-20 rounded-full object-cover object-center' />
                         <p className='font-medium text-small text-center'>You</p>
@@ -32,7 +32,7 @@ export default function VideoRoom ({
                        </div>
                       </div>
                       {/* Video Feed 2 */}
-                      <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 rounded-md flex items-center justify-center'>
+                      <div className='relative h-full w-full bg-gray dark:bg-boxdark-2 dark:text-white rounded-md flex items-center justify-center'>
                        <div className='space-y-2'>
                         <Image src='/user/user-02.png' alt='image-avatar' width={80} height={80} className='h-20 w-20 rounded-full object-cover object-center' />
                         <p className='font-medium text-sm text-center'>Andrea Smith</p>

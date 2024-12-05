@@ -11,6 +11,7 @@ interface SideMenuItem{
     key:number;
     title:string;
     icon:LucideIcon;
+    path:string;
 }
 
 interface Message {

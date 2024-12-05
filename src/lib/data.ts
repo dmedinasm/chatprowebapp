@@ -1,5 +1,5 @@
 import { ChatItem, MediaMessageImage, SideMenuItem } from '../../types'
-import { MessageSquare, Users, CircleUserRound, CircleEllipsis } from 'lucide-react'
+import { MessageSquare, CircleUserRound } from 'lucide-react'
 export const list: ChatItem[] = [
   {
     imgSrc: '/user/user-01.png',
@@ -47,22 +47,14 @@ export const navigation: SideMenuItem[] = [
   {
     key: 0,
     title: 'DMs',
-    icon: MessageSquare
+    icon: MessageSquare,
+    path: '/dashboard'
   },
   {
     key: 1,
-    title: 'Groups',
-    icon: Users
-  },
-  {
-    key: 2,
     title: 'Profile',
-    icon: CircleUserRound
-  },
-  {
-    key: 3,
-    title: 'More',
-    icon: CircleEllipsis
+    icon: CircleUserRound,
+    path: '/dashboard/profile'
   }
 ]
 
