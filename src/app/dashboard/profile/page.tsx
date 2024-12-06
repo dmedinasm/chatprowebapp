@@ -1,4 +1,6 @@
 'use client'
+import ProfileForm from '@/components/main-components/profileform'
+import UpdatePasswordForm from '@/components/main-components/updatepasswordform'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
@@ -26,11 +28,11 @@ export default function ProfilePage () {
       <div>
         <article className={`${selectedTab === 1 ? 'block' : 'hidden'}`}>
           {/* Profile form */}
-          Profile form
+          <ProfileForm/>
         </article>
         <article className={`${selectedTab === 2 ? 'block' : 'hidden'}`}>
           {/* Update Password form */}
-          Update Password Form
+          <UpdatePasswordForm/>
         </article>
       </div>
     </div>
