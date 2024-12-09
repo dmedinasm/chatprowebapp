@@ -16,6 +16,58 @@ export default function ProfileForm () {
                  </label>
             </div>
         </div>
+
+        {/* profile form */}
+      <div className='rounded-sm border border-stroke bg-white shadow-default
+         dark:border-strokedark dark:bg-boxdark sm:max-w-150'>
+        <form action=''>
+          <div className='flex flex-col gap-5 p-6'>
+            {/* Name */}
+            <div >
+              <label className='mb-3 block text-black dark:text-white'>
+                Name
+              </label>
+              <input type='text' placeholder='Enter your Name' className='w-full rounded-lg border-[1.5px]
+               border-stroke bg-transparent py-3 px-5 text-black outline-none transition
+               focus:border-chatprimarydark:text-whiteactive:border-chatprimary disabled: cursor-default
+               disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white
+               dark:focus:border-chatprimary
+               '/>
+            </div>
+            {/* Job Title */}
+            <div >
+              <label className='mb-3 block text-black dark:text-white'>
+                Job Title
+              </label>
+              <input type='text' placeholder='Enter your Job Title' className='w-full rounded-lg border-[1.5px]
+               border-stroke bg-transparent py-3 px-5 text-black outline-none transition
+               focus:border-chatprimarydark:text-whiteactive:border-chatprimary disabled: cursor-default
+               disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white
+               dark:focus:border-chatprimary
+               '/>
+            </div>
+            {/* Bio */}
+            <div >
+              <label className='mb-3 block text-black dark:text-white'>
+                Bio
+              </label>
+              <input type='text' placeholder='Add your Bio' className='w-full rounded-lg border-[1.5px]
+               border-stroke bg-transparent py-3 px-5 text-black outline-none transition
+               focus:border-chatprimarydark:text-whiteactive:border-chatprimary disabled: cursor-default
+               disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white
+               dark:focus:border-chatprimary
+               '/>
+            </div>
+            {/* Country */}
+
+            {/* Submit */}
+            <button type='submit' className='bg-chatprimary text-white w-full
+            cursor-pointer rounded-lg border border-chatprimary py-3 px-6 transition hover:bg-opacity-90'>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
