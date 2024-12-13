@@ -15,7 +15,7 @@ function Sidebar () {
   }
   return (
     <aside className='flex flex-col border-r border-stroke p-2 dark:bg-boxdark dark:border-strokedark'>
-      <div className='flex flex-col items-center space-y-5'>
+      <div className='flex flex-col items-center  space-y-5'>
         {/* <div className='space-y-2 flex flex-col text-center'>
           <div className='mx-auto border border-stroke rounded-md p-2 dark:border-strokedark'>
             <Shapes size={24} />
@@ -39,7 +39,7 @@ function Sidebar () {
       </div>
       <div className='flex flex-col grow'></div>
 
-      <div className='space-y-4.5'>
+      <div className='space-y-4.5 flex flex-col items-center'>
         <div className='flex flex-row items-center justify-center'>
         <DarkModeSwitcher />
         </div>

@@ -1,6 +1,7 @@
 import { Camera } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import SelectInput from '../ui/selectinput'
 
 export default function ProfileForm () {
   return (
@@ -59,7 +60,7 @@ export default function ProfileForm () {
                '/>
             </div>
             {/* Country */}
-
+            <SelectInput />
             {/* Submit */}
             <button type='submit' className='bg-chatprimary text-white w-full
             cursor-pointer rounded-lg border border-chatprimary py-3 px-6 transition hover:bg-opacity-90'>
