@@ -1,5 +1,6 @@
 'use client'
 import Logo from '@/components/ui/logo'
+// import useAuthStore from '@/store/authStore'
 import { LockKeyhole, Mail, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,6 +9,10 @@ import React from 'react'
 
 function Register () {
   const route = useRouter()
+  // const { registerUser, isLoading, error } = useAuthStore()
+  // const handleSubmit = () => {
+  //  resgisterUser({})
+  // }
   return (
         <section className='border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark  '>
             <div className='flex flex-row flex-wrap items-center  '>
