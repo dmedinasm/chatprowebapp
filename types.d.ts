@@ -32,25 +32,25 @@ interface MediaMessageImage {
     imgSrc: string;
 }
 
+interface RegisterForm {
+  name: string;
+  email: string;
+  password: string;
+}
+
 interface LoginForm {
   email: string;
   password: string;
 }
-interface RegisterSuccessResponse {
-  status: 'success';
+
+interface RegisterResponse {
+  status: string;
   message: string;
 }
 
-interface RegisterErrorResponse {
-  status: 'error';
+interface SendOTPResponse {
+  status: string;
   message: string;
-}
-
-type RegisterResponse = RegisterSuccessResponse | RegisterErrorResponse;
-
-interface SendOTPSuccessResponse {
-  status: 'success';
-  message: 'OTP sent successfully';
 }
 
 interface VerifyOTPResponse {
@@ -91,7 +91,7 @@ type AuthStore = {
   token: string | null,
   user:User | null,
   isLoggedIn: boolean
-  registerUser: (formRegister: FormData) => Promise<void>,
+  registerUser: (formRegister: RegisterForm) => Promise<void>,
   resendOTP: (email: string) => Promise<void>,
   verifyOTP:(formOTP: FormData, push: (href: string, options?: { scroll?: boolean }) => void) => Promise<void>,
   loginUser:(formLogin: LoginForm, push: (href: string, options?: { scroll?: boolean }) => void) => Promise<void>,
@@ -107,7 +107,7 @@ export type {
   MediaMessageImage,
   RegisterForm,
   RegisterResponse,
-  SendOTPSuccessResponse,
+  SendOTPResponse,
   VerifyOTPResponse,
   LoginResponse,
   User,

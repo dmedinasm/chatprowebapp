@@ -1,5 +1,6 @@
 import { create } from 'zustand'
-import { loginToUser, resendOTPMail, signUp, verifyUserOTP } from '@/lib/apiAuth'
+import { resendOTPMail, signUp, verifyUserOTP, logIn } from '@/lib/apiAuth'
+
 import { AuthStore } from '../../types'
 import { toast } from 'sonner'
 
@@ -15,14 +16,14 @@ const useAuthStore = create<AuthStore>()((set, get) => ({
     set({ isLoading: true })
     try {
       const response = await signUp(formRegister)
-      toast.success(response.message)
+      toast.success(response.message, { position: 'top-right', richColors: true })
     } catch (err) {
       if (err instanceof Error) {
         set({ error: err })
-        toast.error(err.message)
+        toast.error(err.message, { position: 'top-right', richColors: true })
       } else {
         set({ error: new Error('An unknown error occurred.') })
-        toast.error('An unknown error occurred.')
+        toast.error('An unknown error occurred.', { position: 'top-right', richColors: true })
       }
     } finally {
       set({ isLoading: false })
@@ -74,7 +75,7 @@ const useAuthStore = create<AuthStore>()((set, get) => ({
     set({ error: null })
     set({ isLoading: true })
     try {
-      const response = await loginToUser(formLogin)
+      const response = await logIn(formLogin)
       const { token, message } = response
       set({ token, isLoggedIn: true })
       toast.success(message)

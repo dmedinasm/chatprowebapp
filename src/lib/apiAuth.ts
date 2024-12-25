@@ -1,8 +1,8 @@
-import { LoginForm, LoginResponse, RegisterResponse, SendOTPSuccessResponse, VerifyOTPResponse } from '../../types'
+import { LoginForm, RegisterForm, LoginResponse, RegisterResponse, SendOTPResponse, VerifyOTPResponse } from '../../types'
 
 const apiUrl = 'http://localhost:3001/api'
 
-export const signUp = async (registerForm: FormData) => {
+export const signUp = async (registerForm: RegisterForm) => {
   const response = await fetch(`${apiUrl}/auth/signup`, {
     method: 'POST',
     headers: {
@@ -11,9 +11,11 @@ export const signUp = async (registerForm: FormData) => {
     body: JSON.stringify({ ...registerForm })
   })
 
-  if (!response.ok) throw new Error('Something went wrong. Please try again.')
-
   const data: RegisterResponse = await response.json()
+
+  if (!response.ok) {
+    throw new Error(data.message)
+  }
   console.log(data)
   return data
 }
@@ -28,7 +30,7 @@ export const resendOTPMail = async (email: string) => {
   })
 
   if (!response.ok) throw new Error('Something went wrong. Please try again.')
-  const data: SendOTPSuccessResponse = await response.json()
+  const data: SendOTPResponse = await response.json()
   return data
 }
 
@@ -46,7 +48,7 @@ export const verifyUserOTP = async (formOTP: FormData) => {
   return data
 }
 
-export const loginToUser = async (formLogin: LoginForm) => {
+export const logIn = async (formLogin: LoginForm) => {
   const response = await fetch(`${apiUrl}/auth/login`, {
     method: 'POST',
     headers: {
